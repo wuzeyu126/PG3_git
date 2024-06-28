@@ -11,6 +11,8 @@ public:
     virtual void Size() const = 0;
     //結果を表示する仮想関数
     virtual void Draw() const = 0;
+    //デストラクタ
+    virtual ~IShape() {}
 };
 
 //派生クラスCircle
@@ -58,6 +60,7 @@ int main() {
     for (int i = 0; i < 2; ++i) {
         shape[i]->Size();  
         shape[i]->Draw();   
+        delete shape[i];
     }
 
     return 0;
